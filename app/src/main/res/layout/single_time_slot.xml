@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/afternooncardheader"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="#fff"
+        android:elevation="20dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/timezone"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                tools:text="Noon"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/zone_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                tools:src="@drawable/ic_sun" />
+
+            <TextView
+                android:id="@+id/zone_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                tools:text="20 C" />
+
+            <Button
+                android:id="@+id/expand"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_button"
+                android:elevation="16dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/afternoonexpanded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_goneMarginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/afternooncardheader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/header_bg">
+
+            <LinearLayout
+                android:id="@+id/afternoonexapandedheader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/zone_time_expanded"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    tools:text="Afternoon"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/zone_image_expanded"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_sun" />
+
+                <TextView
+                    android:id="@+id/zone_temp_expanded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    tools:text="20 C"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/morningcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="100dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@id/afternoonexapandedheader">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/dater"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/datingprofile"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/bot"
+                        app:layout_constraintBottom_toBottomOf="@id/dater"
+                        app:layout_constraintEnd_toEndOf="@id/dater" />
+
+                    <TextView
+                        android:id="@+id/hostname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Nicolas is the host"
+                        android:textColor="#022B3E"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/dater"
+                        app:layout_constraintStart_toEndOf="@id/dater"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <ImageView
+                        android:id="@+id/dots"
+                        android:layout_width="5dp"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/icon_dots"
+                        app:layout_constraintBottom_toBottomOf="@id/dater"
+                        app:layout_constraintStart_toEndOf="@id/hostname"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/guest1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="70dp"
+                        android:src="@drawable/guest2"
+                        app:layout_constraintBottom_toBottomOf="@id/dater"
+                        app:layout_constraintStart_toEndOf="@id/dots"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/guest2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/guest1"
+                        app:layout_constraintBottom_toBottomOf="@id/dater"
+                        app:layout_constraintStart_toEndOf="@id/dots"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/guest3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="110dp"
+                        android:src="@drawable/guest3"
+                        app:layout_constraintBottom_toBottomOf="@id/dater"
+                        app:layout_constraintStart_toEndOf="@id/dots"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_checkmark_blue"
+                        app:layout_constraintEnd_toEndOf="@id/guest1"
+                        app:layout_constraintStart_toStartOf="@id/guest1"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_checkmark_blue"
+                        app:layout_constraintEnd_toEndOf="@id/guest2"
+                        app:layout_constraintStart_toStartOf="@id/guest2"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_checkmark_blue"
+                        app:layout_constraintEnd_toEndOf="@id/guest3"
+                        app:layout_constraintStart_toStartOf="@id/guest3"
+                        app:layout_constraintTop_toTopOf="@id/dater" />
+
+                    <ImageView
+                        android:id="@+id/dashed"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_marginTop="32dp"
+                        android:src="@drawable/dotted"
+                        app:layout_constraintTop_toBottomOf="@id/dater" />
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Piano Works"
+                        android:textColor="#022B3E"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dashed" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="6:00 PM"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/bar_image"
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pub"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+                    <ImageView
+                        android:id="@+id/cocktail"
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_cocktail"
+                        app:layout_constraintStart_toEndOf="@id/bar_image"
+                        app:layout_constraintTop_toTopOf="@id/bar_image" />
+
+                    <ImageView
+                        android:id="@+id/location"
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_location"
+                        app:layout_constraintStart_toEndOf="@id/bar_image"
+                        app:layout_constraintTop_toBottomOf="@id/cocktail" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Cocktail"
+                        app:layout_constraintBottom_toBottomOf="@id/cocktail"
+                        app:layout_constraintStart_toEndOf="@id/cocktail"
+                        app:layout_constraintTop_toTopOf="@id/cocktail" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:maxLines="2"
+                        android:text="20 Queensberry \nSW7 2DR"
+                        app:layout_constraintStart_toEndOf="@id/location"
+                        app:layout_constraintTop_toTopOf="@id/location" />
+
+                    <Button
+                        android:id="@+id/pub_accept"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/accept_bg"
+                        android:text="Accept"
+                        android:textColor="#fff"
+
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/bar_image"
+                        app:layout_constraintTop_toBottomOf="@id/location" />
+
+                    <TextView
+                        android:id="@+id/accepted"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/accepted_bg"
+                        android:gravity="center"
+                        android:text="Accepted"
+                        android:textAlignment="center"
+                        android:textColor="#04c35f"
+                        android:textSize="20sp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/bar_image"
+                        app:layout_constraintTop_toBottomOf="@id/location" />
+
+                    <TextView
+                        android:id="@+id/declined"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/declined_bg"
+                        android:gravity="center"
+                        android:text="Declined"
+                        android:textColor="#ff0000"
+                        android:textSize="20sp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/bar_image"
+                        app:layout_constraintTop_toBottomOf="@id/location" />
+
+                    <Button
+                        android:id="@+id/pub_decline"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/decline_bg"
+                        android:text="Decline"
+                        android:textColor="#504646"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/bar_image"
+                        app:layout_constraintEnd_toEndOf="@id/pub_accept"
+                        app:layout_constraintStart_toStartOf="@id/pub_accept" />
+
+                    <ImageView
+                        android:id="@+id/dashed2"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_marginTop="32dp"
+                        android:src="@drawable/dotted"
+                        app:layout_constraintTop_toBottomOf="@id/bar_image" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/time_bg"
+                        android:drawableStart="@drawable/ic_man_walking"
+                        android:drawablePadding="4dp"
+                        android:padding="8dp"
+                        android:text="10 mins"
+                        app:layout_constraintBottom_toBottomOf="@id/dashed2"
+                        app:layout_constraintStart_toStartOf="@id/dashed2"
+                        app:layout_constraintTop_toTopOf="@id/dashed2" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="32dp"
+                        android:text="Thai Square"
+                        android:textColor="#022B3E"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dashed2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="8:00 PM"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/rest_image"
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rest_image"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+                    <ImageView
+                        android:id="@+id/rest"
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_cocktail"
+                        app:layout_constraintStart_toEndOf="@id/rest_image"
+                        app:layout_constraintTop_toTopOf="@id/rest_image" />
+
+                    <ImageView
+                        android:id="@+id/location2"
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_location"
+                        app:layout_constraintStart_toEndOf="@id/rest_image"
+                        app:layout_constraintTop_toBottomOf="@id/rest" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Thai"
+                        app:layout_constraintBottom_toBottomOf="@id/rest"
+                        app:layout_constraintStart_toEndOf="@id/rest"
+                        app:layout_constraintTop_toTopOf="@id/rest" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:maxLines="2"
+                        android:text="20 Queensberry \nSW7 2DR"
+                        app:layout_constraintStart_toEndOf="@id/location2"
+                        app:layout_constraintTop_toTopOf="@id/location2" />
+
+                    <Button
+                        android:id="@+id/rest_accept"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/accept_bg"
+                        android:text="Accept"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rest_image"
+                        app:layout_constraintTop_toBottomOf="@id/location2" />
+
+                    <Button
+                        android:id="@+id/rest_decline"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/decline_bg"
+                        android:text="Decline"
+                        android:textColor="#504646"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/rest_image"
+                        app:layout_constraintEnd_toEndOf="@id/rest_accept"
+                        app:layout_constraintStart_toStartOf="@id/rest_accept" />
+
+                    <TextView
+                        android:id="@+id/accepted_rest"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/accepted_bg"
+                        android:gravity="center"
+                        android:text="Accepted"
+                        android:textAlignment="center"
+                        android:textColor="#04c35f"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rest_image"
+                        app:layout_constraintTop_toBottomOf="@id/location2" />
+
+                    <TextView
+                        android:id="@+id/declined_rest"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/declined_bg"
+                        android:gravity="center"
+                        android:text="Declined"
+                        android:textColor="#ff0000"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rest_image"
+                        app:layout_constraintTop_toBottomOf="@id/location2" />
+
+                    <ImageView
+                        android:id="@+id/dashed3"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_marginTop="32dp"
+                        android:src="@drawable/dotted"
+                        app:layout_constraintTop_toBottomOf="@id/rest_image" />
+
+                    <ImageView
+                        android:id="@+id/monkey"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/bot3x"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dashed3" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/chat"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/three_corners"
+                        app:layout_constraintStart_toEndOf="@id/monkey"
+                        app:layout_constraintTop_toTopOf="@id/monkey">
+
+                        <TextView
+                            android:id="@+id/monkee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Monkee"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="5 mins"
+                            android:textColor="#CCB1A7A7"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Kate, listen i know im greate but im just a virtual friend maybe you should invite some real ones?"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/monkee"
+                            app:layout_constraintTop_toBottomOf="@id/monkee" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_heart"
+                        app:layout_constraintBottom_toBottomOf="@id/chat"
+                        app:layout_constraintStart_toEndOf="@id/chat"
+                        app:layout_constraintTop_toTopOf="@id/chat" />
+
+                    <ImageView
+                        android:id="@+id/comments"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_comments"
+                        app:layout_constraintBottom_toBottomOf="@id/num_commend"
+                        app:layout_constraintStart_toStartOf="@id/chat"
+                        app:layout_constraintTop_toBottomOf="@id/chat" />
+
+                    <TextView
+                        android:id="@+id/num_commend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="6 comments"
+                        app:layout_constraintStart_toEndOf="@id/comments"
+                        app:layout_constraintTop_toBottomOf="@id/chat" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/noidea"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/datingprofile"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/num_commend" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/input_bg"
+                        android:hint="Write your thoughts.."
+                        android:paddingStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@id/noidea"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/noidea"
+                        app:layout_constraintTop_toTopOf="@id/noidea" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/morningcard"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="49dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

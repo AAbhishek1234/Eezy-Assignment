@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <stroke android:color="#04c35f" android:width="2dp"/>
+            <corners android:radius="10dp"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/ic_checkmark_blue" android:right="50dp" android:left="15dp"
+        android:height="20dp" android:width="20dp" android:top="12dp">
+
+    </item>
+</layer-list>
